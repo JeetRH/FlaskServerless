@@ -1,0 +1,13 @@
+oc delete deploy/serverless-flask \
+		   service/serverless-flask \
+		   -n honda
+
+
+kn service create serverless-flask \
+   --image image-registry.openshift-image-registry.svc:5000/honda/serverless-flask:latest \
+   --label app.openshift.io/runtime=python \
+   --label app.kubernetes.io/part-of=hello-world \
+   --port 8080 \
+   --no-cluster-local \
+   --request cpu=100m,memory=256Mi \
+   -n honda
