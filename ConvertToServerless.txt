@@ -11,3 +11,15 @@ kn service create serverless-flask \
    --no-cluster-local \
    --request cpu=100m,memory=256Mi \
    -n honda
+
+
+3 step process
+1. Install the operator
+
+2. create two namespaces knative-serving and knative-eventing
+
+3. In knative-serving create the default KNativeServing object and in knative-eventing create the default KNativeEventing object
+
+Then to install kn:
+
+Your kn needs to match what's on the cluster. Easiest is probably to download it from the cluster (oc get consoleclidownload kn -o yaml to get the URL)
