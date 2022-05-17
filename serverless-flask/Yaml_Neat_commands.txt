@@ -1,0 +1,9 @@
+oc get service.serving.knative.dev serverless-flask -o yaml -n honda | oc neat > serverless-flask-knative_service.yaml
+OR
+oc get ksvc serverless-flask -o yaml -n honda | oc neat > serverless-flask-knative_service.yaml
+
+
+oc get is serverless-flask -o yaml -n honda | oc neat > serverless-flask-imagestream.yaml
+
+
+oc get bc serverless-flask -o yaml -n honda | oc neat > serverless-flask-buildconfig.yaml
